@@ -1,5 +1,5 @@
 #!/bin/bash
-
+BASEDIR=$(dirname "$0")
 MYSQL_IMAGE="mysql"
 MYSQL_VERSION="5.7.37"
 MYSQL_CONTAINER_NAME="some-mysql"
@@ -30,6 +30,6 @@ echo "Waiting for DB to start ..."
 sleep 10
 
 echo "Creating DB & Tables !! "
-docker cp db_init.sh ${MYSQL_CONTAINER_NAME}:/tmp/db_init.sh
+docker cp ${BASEDIR}/bootstrap/db_init.sh ${MYSQL_CONTAINER_NAME}:/tmp/db_init.sh
 docker exec ${MYSQL_CONTAINER_NAME} bash /tmp/db_init.sh
 echo "Finished DB & Table Creation !! "
