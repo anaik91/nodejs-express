@@ -1,6 +1,6 @@
 # NodeJS Express
 
-## Pre-Requistes
+## Pre-Requisites
 * git 
 * docker
 * node 
@@ -10,3 +10,10 @@
 * Clone the repo
 * npm install
 * bash local.sh
+
+```
+git clone https://github.com/anaik91/nodejs-express.git
+cd nodejs-express
+npm i
+bash local.sh
+```
