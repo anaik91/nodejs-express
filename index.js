@@ -1,12 +1,13 @@
 const express = require('express');
 const courses = require('./routes/courses')
 const index = require('./routes/index')
-const db = require('./config/db')
+const ui = require('./routes/ui')
 
 const app = express();
 app.use(express.json());
 
-app.use('/',index)
+app.use('/',ui)
+app.use('/healthz',index)
 app.use('/api/courses',courses)
 
 app.get('/',(req,res)=>{
